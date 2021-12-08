@@ -1,0 +1,45 @@
+<div class="container">
+
+  <!-- Show it when there is no employee -->
+  <div class="no-data text-center" *ngIf="parentList.length == 0">
+    <p>There is no parent question in the list yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-employee">Add Query</button>
+  </div>
+
+  <!-- Questions list table, it hides when there is no employee -->
+  <div  class ="text-center" *ngIf="parentList.length !== 0">
+    <h3 >Parent Questions List</h3>
+
+    <div class="col-md-12">
+      <table  class=" table table-hover" style="border: 2em; outline: 10em; border-width: 5px;">
+        <thead>
+          <tr>
+            <th scope="col"> Parent Question Id</th>
+            <th scope="col">Redirection URL</th>
+            <th scope="col">Image URL</th>
+            <th scope="col">Response</th>
+            <th scope="col">Message Type</th>
+            <th scope="col">Response Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of parentList" >
+            <ng-container *ngIf="item.id.length > 0">
+            <td>{{item.id}}</td>
+            <td>{{item.redirectUrl}}</td>
+            <td>{{item.imageUrl}}</td>
+            <td>{{item.response}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.responseType}}</td>
+             <td>
+              <span class="btn btn-info" routerLink="/answers-management/{{item.id}}">Add Linked Responses</span>
+            </td> 
+          </ng-container>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

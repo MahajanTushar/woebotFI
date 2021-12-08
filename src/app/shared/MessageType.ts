@@ -1,0 +1,3 @@
+export enum MessageType {
+    IMAGE,BUTTON,LINK,IMAGEBUTTON,TEXT_PARAGRAPH
+  }

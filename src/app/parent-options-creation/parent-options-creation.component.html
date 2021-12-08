@@ -1,0 +1,22 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">Create New Parent</h3>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="answerDetails.id" class="form-control" placeholder="id">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="answerDetails.msgTxt" class="form-control" placeholder="msgTxt">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="answerDetails.imageUrl" class="form-control" placeholder="imageUrl">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="addAnswer()">Add Answer Option</button>
+    </div>
+
+  </div>
+</div>

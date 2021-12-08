@@ -1,0 +1,66 @@
+
+  <div>
+    <div class="container custom-container">
+    <h3 class="mb-3 text-center">Add answers</h3>
+
+    <div class="form-group  " >
+      <input type="text" [(ngModel)]="answers.id" class="form-control" placeholder="id">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="answerDetails.msgTxt" class="form-control" placeholder="msgTxt">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="answerDetails.imageUrl" class="form-control" placeholder="imageUrl">
+    </div>
+    
+    <div class="form-group">
+      <select  class="form-control" [(ngModel)]="answers.type" >
+        <option value="undefined" selected disabled> MessageType </option>
+        <option *ngFor="let option of msgOpts" >{{option}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="addAnswer()">Add Answer Option</button>
+    </div>
+  </div>
+  </div>
+<br>
+<br>
+<br>
+  <div *ngIf="answers.length !== 0">
+  
+
+    <div class="text-center">
+      <h2 style="color: lightcoral;">Existing Linked Responses</h2>
+      <table  class=" table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"> Answer Id</th>
+            <th scope="col">Redirection URL</th>
+            <th scope="col">Image URL</th>
+            <th scope="col">Response</th>
+            <th scope="col">Message Type</th>
+            <th scope="col">Response Type</th>
+            <th scope="col">Ordered At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of previousResponses" >
+            <!-- <ng-container *ngIf="item.ansId.length > 0"> -->
+            <td>{{item.ansId}}</td>
+            <td>{{item.redirectUrl}}</td>
+            <td>{{item.imageUrl}}</td>
+            <td>{{item.response}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.responseType}}</td>
+          <!-- </ng-container> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
